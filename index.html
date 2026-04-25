@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safeus — Safety Check-in App</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #1a1a1a;
+            background: #f8f8fa;
+            line-height: 1.6;
+        }
+        .hero {
+            background: linear-gradient(135deg, #111113 0%, #1a2e1a 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            margin-bottom: 16px;
+        }
+        .hero p {
+            font-size: 18px;
+            opacity: 0.8;
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+        .hero .badge {
+            display: inline-block;
+            background: #4a8c6f;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .hero .badge:hover { opacity: 0.9; }
+        .features {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .features h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+        }
+        .feature {
+            text-align: center;
+            padding: 24px;
+        }
+        .feature .icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+        .feature h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .feature p {
+            font-size: 14px;
+            color: #666;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+            font-size: 13px;
+            border-top: 1px solid #e8e8ea;
+        }
+        .footer a { color: #4a8c6f; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        .nav { display: flex; gap: 24px; justify-content: center; margin-top: 16px; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>S A F E U S</h1>
+        <p>Let your loved ones know you're safe. Check if they're OK. One tap is all it takes.</p>
+        <a href="https://apps.apple.com/app/safeus/id6761664686" class="badge">Download on the App Store</a>
+    </div>
+
+    <div class="features">
+        <h2>How it works</h2>
+        <div class="feature-grid">
+            <div class="feature">
+                <div class="icon">🟢</div>
+                <h3>Tap "I'm Safe"</h3>
+                <p>One tap broadcasts your safety status to all your contacts who use Safeus.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">👥</div>
+                <h3>See Who's Safe</h3>
+                <p>Your contacts' safety status updates in real time. Always know who's OK.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">👨‍👩‍👧‍👦</div>
+                <h3>Groups</h3>
+                <p>Create groups like "Family" and get notified when everyone is safe.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🔔</div>
+                <h3>Nudge</h3>
+                <p>Haven't heard from someone? Send them a gentle nudge to check in.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="nav">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="mailto:nimomix@gmail.com">Contact</a>
+        </div>
+        <p style="margin-top: 16px;">© 2026 Nimrod Bar. All rights reserved.</p>
+    </div>
+</body>
+</html>
