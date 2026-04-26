@@ -31,7 +31,7 @@
         .hero {
             background: radial-gradient(ellipse at 50% 20%, #1a3a2a 0%, #0e1a14 70%);
             color: white;
-            padding: 80px 24px 0;
+            padding: 80px 24px 90px;
             overflow: hidden;
             position: relative;
         }
@@ -81,7 +81,6 @@
         .hero .badge:hover { transform: translateY(-1px); }
         .hero-phone {
             justify-self: center;
-            margin-bottom: -40px;
         }
 
         /* Phone frame */
@@ -103,29 +102,18 @@
             height: auto;
             border-radius: 36px;
         }
-        .phone-crop {
-            display: inline-block;
-            border-radius: 44px;
-            overflow: hidden;
-            background: #000;
-            padding: 8px;
-            box-shadow:
-                0 30px 60px -20px rgba(0,0,0,0.4),
-                0 18px 36px -18px rgba(0,0,0,0.35);
-            max-width: 340px;
+        .phone-pair {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
         }
-        .phone-crop .frame {
-            border-radius: 36px;
-            overflow: hidden;
-            aspect-ratio: 9 / 13;
+        .phone-pair .phone {
+            max-width: 240px;
+            flex: 0 1 240px;
         }
-        .phone-crop img {
-            display: block;
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            object-position: top;
-        }
+        .phone-pair .phone:first-child { transform: rotate(-2deg); }
+        .phone-pair .phone:last-child  { transform: rotate(2deg); margin-top: 24px; }
 
         /* Sections */
         section {
@@ -230,6 +218,9 @@
             h2 { font-size: 30px; }
             .features { grid-template-columns: 1fr; gap: 32px; }
             .how-inner { padding: 70px 24px; }
+            .phone-pair { flex-direction: column; gap: 24px; }
+            .phone-pair .phone:first-child { transform: none; }
+            .phone-pair .phone:last-child  { transform: none; margin-top: 0; }
         }
     </style>
 </head>
@@ -257,11 +248,16 @@
                 <h2>When uncertainty hits, hold on to one thing.</h2>
                 <p>A missile alert. An earthquake. A late-night ride home. A quiet day that suddenly stops feeling quiet.</p>
                 <p>In those moments you don't want to coordinate, draft a message, or call ten people back. You want to know — fast — that the people you love are OK, and you want them to know the same about you.</p>
-                <p class="muted">One slide tells your emergency contacts you're not safe. They get your location, can call emergency services, and stay with you until you mark yourself safe again.</p>
+                <p class="muted">Slide once to mark yourself unsafe — your contacts get your live location, a clear way to call you, and a tap to navigate straight to where you are.</p>
             </div>
             <div class="visual">
-                <div class="phone">
-                    <img src="images/unsafe.png" alt="Safeus unsafe mode showing emergency actions and live activity log">
+                <div class="phone-pair">
+                    <div class="phone">
+                        <img src="images/unsafe.png" alt="Safeus unsafe mode showing emergency actions and live activity log">
+                    </div>
+                    <div class="phone">
+                        <img src="images/map.jpg" alt="Safeus contact view showing live location on a map with navigate, call, and check-on actions">
+                    </div>
                 </div>
             </div>
         </div>
@@ -276,10 +272,8 @@
                 <p class="muted">Group your contacts into Family, Friends, or Work. Get notified when everyone in a group is safe. Send a gentle nudge to anyone you haven't heard from.</p>
             </div>
             <div class="visual">
-                <div class="phone-crop">
-                    <div class="frame">
-                        <img src="images/contacts.png" alt="Safeus contacts list showing Family group all safe and a contact marked safe">
-                    </div>
+                <div class="phone">
+                    <img src="images/contacts.jpg" alt="Safeus contacts list showing favorites and contacts all marked safe">
                 </div>
             </div>
         </div>
