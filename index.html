@@ -3,129 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safeus — Safety Check-in App</title>
+    <title>Safeus — Peace of mind, in one tap.</title>
+    <meta name="description" content="For tense moments, emergencies, and the everyday 'are you OK?' — Safeus lets you tell the people you love that you're safe, and see in an instant that they are too.">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: #1a1a1a;
-            background: #f8f8fa;
-            line-height: 1.6;
+        :root {
+            --green: #4a8c6f;
+            --green-dark: #2f6b54;
+            --ink: #111113;
+            --ink-soft: #2a2d2e;
+            --muted: #6b7075;
+            --bg: #f7f7f4;
+            --card: #ffffff;
+            --line: #e6e6e2;
         }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--green-dark); }
+
+        /* Hero */
         .hero {
-            background: linear-gradient(135deg, #111113 0%, #1a2e1a 100%);
+            background: radial-gradient(ellipse at 50% 20%, #1a3a2a 0%, #0e1a14 70%);
             color: white;
-            text-align: center;
-            padding: 80px 20px;
+            padding: 80px 24px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .hero-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #9ec9b3;
+            margin-bottom: 20px;
         }
         .hero h1 {
-            font-size: 48px;
+            font-size: 56px;
+            line-height: 1.05;
             font-weight: 700;
-            letter-spacing: 6px;
-            margin-bottom: 16px;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
         }
-        .hero p {
+        .hero .lede {
             font-size: 18px;
-            opacity: 0.8;
-            max-width: 500px;
-            margin: 0 auto 32px;
+            line-height: 1.6;
+            opacity: 0.85;
+            max-width: 520px;
+            margin-bottom: 36px;
         }
         .hero .badge {
-            display: inline-block;
-            background: #4a8c6f;
-            color: white;
-            padding: 12px 32px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: var(--ink);
+            padding: 14px 24px;
             border-radius: 12px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             text-decoration: none;
-            transition: opacity 0.2s;
+            transition: transform 0.15s ease;
         }
-        .hero .badge:hover { opacity: 0.9; }
-        .features {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 0 20px;
+        .hero .badge:hover { transform: translateY(-1px); }
+        .hero-phone {
+            justify-self: center;
+            margin-bottom: -40px;
         }
-        .features h2 {
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 40px;
-            color: #333;
+
+        /* Phone frame */
+        .phone {
+            display: inline-block;
+            border-radius: 44px;
+            overflow: hidden;
+            background: #000;
+            padding: 8px;
+            box-shadow:
+                0 1px 0 rgba(255,255,255,0.06) inset,
+                0 30px 60px -20px rgba(0,0,0,0.5),
+                0 18px 36px -18px rgba(0,0,0,0.45);
+            max-width: 340px;
         }
-        .feature-grid {
+        .phone img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 36px;
+        }
+        .phone-crop {
+            display: inline-block;
+            border-radius: 44px;
+            overflow: hidden;
+            background: #000;
+            padding: 8px;
+            box-shadow:
+                0 30px 60px -20px rgba(0,0,0,0.4),
+                0 18px 36px -18px rgba(0,0,0,0.35);
+            max-width: 340px;
+        }
+        .phone-crop .frame {
+            border-radius: 36px;
+            overflow: hidden;
+            aspect-ratio: 9 / 13;
+        }
+        .phone-crop img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        /* Sections */
+        section {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 110px 24px;
+        }
+        .row {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 32px;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
         }
-        .feature {
+        .row.flip .copy { order: 2; }
+        .row.flip .visual { order: 1; }
+        h2 {
+            font-size: 38px;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -0.8px;
+            margin-bottom: 18px;
+        }
+        .copy p {
+            font-size: 17px;
+            color: var(--ink-soft);
+            margin-bottom: 14px;
+            max-width: 460px;
+        }
+        .copy p.muted {
+            color: var(--muted);
+            font-size: 15px;
+        }
+        .visual { display: flex; justify-content: center; }
+
+        /* How it works */
+        .how {
+            background: white;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+        .how-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 90px 24px;
+        }
+        .how h2 { text-align: center; margin-bottom: 56px; }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .feature { text-align: center; }
+        .feature .dot {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #eaf3ee;
+            color: var(--green-dark);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        .feature h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+        .feature p { font-size: 15px; color: var(--muted); max-width: 280px; margin: 0 auto; }
+
+        /* Dark mode beat */
+        .darkmode {
+            background: #0c0d0f;
+            color: white;
             text-align: center;
-            padding: 24px;
+            padding: 100px 24px;
         }
-        .feature .icon {
-            font-size: 36px;
-            margin-bottom: 12px;
-        }
-        .feature h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .feature p {
-            font-size: 14px;
-            color: #666;
-        }
+        .darkmode h2 { color: white; }
+        .darkmode p { color: #9aa0a6; max-width: 520px; margin: 0 auto 48px; font-size: 17px; }
+        .darkmode .phone { box-shadow: 0 30px 80px -20px rgba(74,140,111,0.25); }
+
+        /* Footer */
         .footer {
             text-align: center;
-            padding: 40px 20px;
-            color: #999;
+            padding: 56px 24px;
+            color: #95989c;
             font-size: 13px;
-            border-top: 1px solid #e8e8ea;
+            background: var(--bg);
         }
-        .footer a { color: #4a8c6f; text-decoration: none; }
+        .footer a { color: var(--green-dark); text-decoration: none; }
         .footer a:hover { text-decoration: underline; }
-        .nav { display: flex; gap: 24px; justify-content: center; margin-top: 16px; }
+        .nav { display: flex; gap: 24px; justify-content: center; margin-bottom: 14px; }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            .hero { padding-top: 60px; }
+            .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+            .hero h1 { font-size: 40px; }
+            .hero .lede { margin-left: auto; margin-right: auto; }
+            section { padding: 70px 24px; }
+            .row { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .row.flip .copy { order: 1; }
+            .row.flip .visual { order: 2; }
+            .copy p { margin-left: auto; margin-right: auto; }
+            h2 { font-size: 30px; }
+            .features { grid-template-columns: 1fr; gap: 32px; }
+            .how-inner { padding: 70px 24px; }
+        }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <h1>S A F E U S</h1>
-        <p>Let your loved ones know you're safe. Check if they're OK. One tap is all it takes.</p>
-        <a href="https://apps.apple.com/app/safeus/id6761664686" class="badge">Download on the App Store</a>
-    </div>
 
-    <div class="features">
-        <h2>How it works</h2>
-        <div class="feature-grid">
-            <div class="feature">
-                <div class="icon">🟢</div>
-                <h3>Tap "I'm Safe"</h3>
-                <p>One tap broadcasts your safety status to all your contacts who use Safeus.</p>
+    <header class="hero">
+        <div class="hero-inner">
+            <div>
+                <span class="eyebrow">S A F E U S</span>
+                <h1>Peace of mind, in one tap.</h1>
+                <p class="lede">For tense moments, emergencies, and the everyday "are you OK?" — Safeus lets you tell the people you love that you're safe, and see in an instant that they are too.</p>
+                <a href="https://apps.apple.com/app/safeus/id6761664686" class="badge">Download on the App Store →</a>
             </div>
-            <div class="feature">
-                <div class="icon">👥</div>
-                <h3>See Who's Safe</h3>
-                <p>Your contacts' safety status updates in real time. Always know who's OK.</p>
+            <div class="hero-phone">
+                <div class="phone">
+                    <img src="images/home-light.png" alt="Safeus home screen showing the I'm Safe button">
+                </div>
             </div>
-            <div class="feature">
-                <div class="icon">👨‍👩‍👧‍👦</div>
-                <h3>Groups</h3>
-                <p>Create groups like "Family" and get notified when everyone is safe.</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="row">
+            <div class="copy">
+                <h2>When uncertainty hits, hold on to one thing.</h2>
+                <p>A missile alert. An earthquake. A late-night ride home. A quiet day that suddenly stops feeling quiet.</p>
+                <p>In those moments you don't want to coordinate, draft a message, or call ten people back. You want to know — fast — that the people you love are OK, and you want them to know the same about you.</p>
+                <p class="muted">One slide tells your emergency contacts you're not safe. They get your location, can call emergency services, and stay with you until you mark yourself safe again.</p>
             </div>
-            <div class="feature">
-                <div class="icon">🔔</div>
-                <h3>Nudge</h3>
-                <p>Haven't heard from someone? Send them a gentle nudge to check in.</p>
+            <div class="visual">
+                <div class="phone">
+                    <img src="images/unsafe.png" alt="Safeus unsafe mode showing emergency actions and live activity log">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-top: 0;">
+        <div class="row flip">
+            <div class="copy">
+                <h2>"All safe."<br>Two words that change the day.</h2>
+                <p>Your contacts' status is always there — quietly, without asking. Green check, marked safe just now. The whole family, all OK.</p>
+                <p>No group chats to scroll. No "did you see this?" No waiting for a reply that may never come.</p>
+                <p class="muted">Group your contacts into Family, Friends, or Work. Get notified when everyone in a group is safe. Send a gentle nudge to anyone you haven't heard from.</p>
+            </div>
+            <div class="visual">
+                <div class="phone-crop">
+                    <div class="frame">
+                        <img src="images/contacts.png" alt="Safeus contacts list showing Family group all safe and a contact marked safe">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="how">
+        <div class="how-inner">
+            <h2>How it works</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="dot">●</div>
+                    <h3>Tap "I'm Safe"</h3>
+                    <p>One tap broadcasts your status to everyone you've added.</p>
+                </div>
+                <div class="feature">
+                    <div class="dot">✓</div>
+                    <h3>See who's OK</h3>
+                    <p>Live status updates from the people who matter — and a green check when a whole group is safe.</p>
+                </div>
+                <div class="feature">
+                    <div class="dot">~</div>
+                    <h3>Nudge, gently</h3>
+                    <p>Haven't heard from someone? A quiet ping that asks "are you OK?" without making it a thing.</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="footer">
+    <div class="darkmode">
+        <h2>Calm, by day or night.</h2>
+        <p>Designed for the moments you reach for your phone in a hurry — at 2 a.m., on the train, in a stairwell, in the dark.</p>
+        <div class="phone">
+            <img src="images/home-dark.png" alt="Safeus in dark mode">
+        </div>
+    </div>
+
+    <footer class="footer">
         <div class="nav">
             <a href="privacy.html">Privacy Policy</a>
             <a href="mailto:nimomix@gmail.com">Contact</a>
         </div>
-        <p style="margin-top: 16px;">© 2026 Nimrod Bar. All rights reserved.</p>
-    </div>
+        <p>© 2026 Nimrod Bar. All rights reserved.</p>
+    </footer>
 </body>
 </html>
