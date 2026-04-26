@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Safeus — Peace of mind, in one tap.</title>
     <meta name="description" content="For tense moments, emergencies, and the everyday 'are you OK?' — Safeus lets you tell the people you love that you're safe, and see in an instant that they are too.">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+    <link rel="apple-touch-icon" href="images/favicon-192.png">
+    <meta property="og:title" content="Safeus — Peace of mind, in one tap.">
+    <meta property="og:description" content="For tense moments, emergencies, and the everyday 'are you OK?' — Safeus lets you tell the people you love that you're safe, and see in an instant that they are too.">
+    <meta property="og:image" content="https://nimomix.github.io/safeus/images/og-image.png">
+    <meta property="og:url" content="https://nimomix.github.io/safeus/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Safeus — Peace of mind, in one tap.">
+    <meta name="twitter:description" content="Tell the people you love that you're safe — and see in an instant that they are too.">
+    <meta name="twitter:image" content="https://nimomix.github.io/safeus/images/og-image.png">
+    <meta name="theme-color" content="#0e1a14">
     <style>
         :root {
             --green: #4a8c6f;
@@ -66,18 +78,10 @@
             margin-bottom: 36px;
         }
         .hero .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: white;
-            color: var(--ink);
-            padding: 14px 24px;
-            border-radius: 12px;
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
+            display: inline-block;
             transition: transform 0.15s ease;
         }
+        .hero .badge img { display: block; height: 54px; width: auto; }
         .hero .badge:hover { transform: translateY(-1px); }
         .hero-phone {
             justify-self: center;
@@ -175,9 +179,9 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
             margin-bottom: 16px;
         }
+        .feature .dot svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
         .feature h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
         .feature p { font-size: 15px; color: var(--muted); max-width: 280px; margin: 0 auto; }
 
@@ -192,10 +196,20 @@
         .darkmode p { color: #9aa0a6; max-width: 520px; margin: 0 auto 48px; font-size: 17px; }
         .darkmode .phone { box-shadow: 0 30px 80px -20px rgba(74,140,111,0.25); }
 
+        /* Trust line */
+        .trust {
+            text-align: center;
+            padding: 64px 24px;
+            background: var(--bg);
+            border-top: 1px solid var(--line);
+        }
+        .trust h3 { font-size: 22px; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 10px; color: var(--ink); }
+        .trust p { font-size: 15px; color: var(--muted); max-width: 540px; margin: 0 auto; line-height: 1.65; }
+
         /* Footer */
         .footer {
             text-align: center;
-            padding: 56px 24px;
+            padding: 40px 24px 56px;
             color: #95989c;
             font-size: 13px;
             background: var(--bg);
@@ -232,7 +246,9 @@
                 <span class="eyebrow">S A F E U S</span>
                 <h1>Peace of mind, in one tap.</h1>
                 <p class="lede">For tense moments, emergencies, and the everyday "are you OK?" — Safeus lets you tell the people you love that you're safe, and see in an instant that they are too.</p>
-                <a href="https://apps.apple.com/app/safeus/id6761664686" class="badge">Download on the App Store →</a>
+                <a href="https://apps.apple.com/app/safeus/id6761664686" class="badge" aria-label="Download Safeus on the App Store">
+                    <img src="images/appstore-badge.svg" alt="Download on the App Store">
+                </a>
             </div>
             <div class="hero-phone">
                 <div class="phone">
@@ -266,7 +282,7 @@
     <section style="padding-top: 0;">
         <div class="row flip">
             <div class="copy">
-                <h2>"All safe."<br>Two words that change the day.</h2>
+                <h2>Always know who's OK.</h2>
                 <p>Your contacts' status is always there — quietly, without asking. Green check, marked safe just now. The whole family, all OK.</p>
                 <p>No group chats to scroll. No "did you see this?" No waiting for a reply that may never come.</p>
                 <p class="muted">Group your contacts into Family, Friends, or Work. Get notified when everyone in a group is safe. Send a gentle nudge to anyone you haven't heard from.</p>
@@ -284,17 +300,23 @@
             <h2>How it works</h2>
             <div class="features">
                 <div class="feature">
-                    <div class="dot">●</div>
+                    <div class="dot">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+                    </div>
                     <h3>Tap "I'm Safe"</h3>
                     <p>One tap broadcasts your status to everyone you've added.</p>
                 </div>
                 <div class="feature">
-                    <div class="dot">✓</div>
+                    <div class="dot">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
                     <h3>See who's OK</h3>
                     <p>Live status updates from the people who matter — and a green check when a whole group is safe.</p>
                 </div>
                 <div class="feature">
-                    <div class="dot">~</div>
+                    <div class="dot">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </div>
                     <h3>Nudge, gently</h3>
                     <p>Haven't heard from someone? A quiet ping that asks "are you OK?" without making it a thing.</p>
                 </div>
@@ -309,6 +331,11 @@
             <img src="images/home-dark.png" alt="Safeus in dark mode">
         </div>
     </div>
+
+    <section class="trust">
+        <h3>Built quietly, on purpose.</h3>
+        <p>Safeus exists to give peace of mind, not to harvest it. We never sell your data, and we never upload your address book — only the phone numbers Safeus needs to find people you already know on the app.</p>
+    </section>
 
     <footer class="footer">
         <div class="nav">
