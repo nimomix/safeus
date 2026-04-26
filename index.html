@@ -77,12 +77,30 @@
             max-width: 520px;
             margin-bottom: 36px;
         }
+        .badges { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
         .hero .badge {
             display: inline-block;
             transition: transform 0.15s ease;
         }
         .hero .badge img { display: block; height: 54px; width: auto; }
         .hero .badge:hover { transform: translateY(-1px); }
+        .badge-soon {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            height: 54px;
+            padding: 0 18px;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 10px;
+            color: rgba(255,255,255,0.7);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            white-space: nowrap;
+        }
+        .badge-soon .label-top { display: block; font-size: 10px; opacity: 0.7; line-height: 1; margin-bottom: 2px; }
+        .badge-soon .label-main { display: block; font-size: 15px; font-weight: 600; line-height: 1; }
+        .badge-soon svg { width: 22px; height: 22px; flex-shrink: 0; }
         .hero-phone {
             justify-self: center;
         }
@@ -246,9 +264,18 @@
                 <span class="eyebrow">S A F E U S</span>
                 <h1>Peace of mind, in one tap.</h1>
                 <p class="lede">For tense moments, emergencies, and the everyday "are you OK?" — Safeus lets you tell the people you love that you're safe, and see in an instant that they are too.</p>
-                <a href="https://apps.apple.com/app/safeus/id6761664686" class="badge" aria-label="Download Safeus on the App Store">
-                    <img src="images/appstore-badge.svg" alt="Download on the App Store">
-                </a>
+                <div class="badges">
+                    <a href="https://apps.apple.com/app/safeus/id6761664686" class="badge" aria-label="Download Safeus on the App Store">
+                        <img src="images/appstore-badge.svg" alt="Download on the App Store">
+                    </a>
+                    <span class="badge-soon" aria-label="Coming soon to Google Play">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.3c-.4.3-.6.7-.6 1.3v17c0 .5.2 1 .6 1.2l9.9-9.4-9.9-10zM14.6 13.4l2.4 2.5-11.7 6.7 9.3-9.2zM5.3 1.4l11.7 6.7-2.4 2.5L5.3 1.4zM18.4 8.8l3.4 1.9c.5.3.7.7.7 1.3 0 .5-.2 1-.7 1.3l-3.4 1.9-2.6-2.6 2.6-3.8z"/></svg>
+                        <span>
+                            <span class="label-top">COMING SOON</span>
+                            <span class="label-main">Google Play</span>
+                        </span>
+                    </span>
+                </div>
             </div>
             <div class="hero-phone">
                 <div class="phone">
