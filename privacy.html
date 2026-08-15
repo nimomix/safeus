@@ -56,7 +56,7 @@
     <div class="container">
         <a href="index.html" class="back">← Back to Safeus</a>
         <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: April 6, 2026</p>
+        <p class="updated">Last updated: August 15, 2026</p>
 
         <p>Safeus ("we", "our", "the app") is a safety check-in application developed by Nimrod Bar. This privacy policy explains how we collect, use, and protect your information.</p>
 
@@ -68,6 +68,8 @@
 
         <p><strong>Safety Status</strong> — When you tap "I'm Safe" or "I'm NOT safe", your status and the timestamp are stored in our database so your contacts can see your safety status.</p>
 
+        <p><strong>Location (only if you share it while not safe)</strong> — When you mark yourself as not safe, you can optionally share your location with your emergency contacts or with all your contacts. If you choose to share, a single coordinate captured at that moment is stored in our database, along with your sharing choice and a timestamp. We never track your location continuously or in the background. <strong>How long it's kept:</strong> the shared coordinate is deleted from our database the moment you mark yourself safe again.</p>
+
         <p><strong>Groups</strong> — Groups you create (names and member phone numbers) are stored in our database. Groups are private to you — only you can see your groups.</p>
 
         <p><strong>Push Notification Tokens</strong> — We store your device's push notification token to deliver notifications such as nudges and group safety alerts.</p>
@@ -76,6 +78,7 @@
         <ul>
             <li><strong>Phone number</strong>: To authenticate your account and match you with contacts who use Safeus</li>
             <li><strong>Safety status</strong>: To display your status to your contacts in real time</li>
+            <li><strong>Location you choose to share while not safe</strong>: To show your emergency contacts (or all contacts, per your choice) where you are</li>
             <li><strong>Groups</strong>: To organize your contacts and send group safety notifications</li>
             <li><strong>Notification tokens</strong>: To deliver push notifications</li>
         </ul>
@@ -84,7 +87,7 @@
         <ul>
             <li>Sell your data to third parties</li>
             <li>Use your data for advertising</li>
-            <li>Track your location</li>
+            <li>Track your location — a coordinate is stored only if you explicitly share it while marking yourself not safe, and it is deleted when you mark yourself safe</li>
             <li>Share your phone number with anyone outside of Safeus contact matching</li>
         </ul>
 
@@ -92,7 +95,7 @@
         <p>Your data is stored using Google Firebase services (Authentication, Cloud Firestore, Cloud Messaging) hosted in the European Union (europe-west1). Data is encrypted in transit and at rest.</p>
 
         <h2>Data Retention</h2>
-        <p>Your data is retained as long as your account is active. You can delete your account by contacting us at <a href="mailto:nimomix@gmail.com">nimomix@gmail.com</a>, which will remove all your data from our systems.</p>
+        <p>Your data is retained as long as your account is active. A location you share while not safe is an exception: it is deleted from our database as soon as you mark yourself safe again. You can delete your account by contacting us at <a href="mailto:nimomix@gmail.com">nimomix@gmail.com</a>, which will remove all your data from our systems.</p>
 
         <h2>Third-Party Services</h2>
         <p>We use the following third-party services:</p>
