@@ -121,10 +121,21 @@
             font-weight: 500;
             letter-spacing: 0.2px;
             white-space: nowrap;
+            text-decoration: none;
+            transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease;
         }
+        .badge-soon:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.55); color: #fff; }
+        .badge-soon:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
         .badge-soon .label-top { display: block; font-size: 10px; opacity: 0.7; line-height: 1; margin-bottom: 2px; }
         .badge-soon .label-main { display: block; font-size: 15px; font-weight: 600; line-height: 1; }
         .badge-soon svg { width: 22px; height: 22px; flex-shrink: 0; }
+        .badge-soon .notify {
+            margin-left: 4px;
+            padding-left: 12px;
+            border-left: 1px solid rgba(255,255,255,0.25);
+            font-size: 13px;
+            font-weight: 600;
+        }
         .hero-phone {
             justify-self: center;
         }
@@ -293,13 +304,17 @@
                     <a href="https://apps.apple.com/app/safeus/id6761664686" class="badge" aria-label="Download Safeus on the App Store">
                         <img src="images/appstore-badge.svg" alt="Download on the App Store">
                     </a>
-                    <span class="badge-soon" aria-label="Coming soon to Google Play">
+                    <a href="mailto:nimomix@gmail.com?subject=Notify%20me%20when%20Safeus%20lands%20on%20Android&amp;body=Hi%20%E2%80%94%20I%27m%20on%20Android.%20Please%20let%20me%20know%20when%20Safeus%20is%20available%20on%20Google%20Play."
+                       class="badge-soon"
+                       data-event="playstore_interest_click"
+                       aria-label="Coming soon to Google Play — email us to be notified when Safeus lands on Android">
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.3c-.4.3-.6.7-.6 1.3v17c0 .5.2 1 .6 1.2l9.9-9.4-9.9-10zM14.6 13.4l2.4 2.5-11.7 6.7 9.3-9.2zM5.3 1.4l11.7 6.7-2.4 2.5L5.3 1.4zM18.4 8.8l3.4 1.9c.5.3.7.7.7 1.3 0 .5-.2 1-.7 1.3l-3.4 1.9-2.6-2.6 2.6-3.8z"/></svg>
                         <span>
                             <span class="label-top">COMING SOON</span>
                             <span class="label-main">Google Play</span>
                         </span>
-                    </span>
+                        <span class="notify">Notify me</span>
+                    </a>
                 </div>
             </div>
             <div class="hero-phone">
@@ -397,5 +412,17 @@
         </div>
         <p>© 2026 Nimrod Bar. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Android interest signal: the mailto is the actual measurement (inbox count).
+        // This just forwards the click to an analytics layer if one is ever added — no-op otherwise.
+        document.querySelectorAll('[data-event]').forEach(function (el) {
+            el.addEventListener('click', function () {
+                var name = el.getAttribute('data-event');
+                if (typeof window.gtag === 'function') window.gtag('event', name);
+                else if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event: name });
+            });
+        });
+    </script>
 </body>
 </html>
