@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+    Source for images/og-card.png — the 1200x630 social sharing card.
+    Regenerate after editing:
+
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+        --headless=new --disable-gpu --hide-scrollbars \
+        --force-device-scale-factor=1 --window-size=1200,630 \
+        --screenshot="$PWD/images/og-card.png" "$PWD/tools/og-card.html"
+
+    Colours and type mirror the hero in index.html.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Safeus social card</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 1200px; height: 630px; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        background: #0e1a14;
+        -webkit-font-smoothing: antialiased;
+    }
+    .card {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background:
+            radial-gradient(ellipse 900px 620px at 26% 6%, rgba(37,86,62,0.75) 0%, rgba(37,86,62,0) 70%),
+            radial-gradient(ellipse 1400px 900px at 50% 18%, #1a3a2a 0%, #0e1a14 70%);
+        color: #fff;
+    }
+    .copy {
+        position: absolute;
+        top: 72px;
+        bottom: 72px;
+        left: 76px;
+        width: 640px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .mark {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 26px;
+    }
+    .mark img {
+        width: 60px;
+        height: 60px;
+        border-radius: 14px;
+        display: block;
+        box-shadow: 0 6px 18px -6px rgba(0,0,0,0.6);
+    }
+    .mark span {
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: 6px;
+        color: #9ec9b3;
+    }
+    .badge img {
+        display: block;
+        height: 58px;
+        width: auto;
+        margin-top: 34px;
+    }
+    h1 {
+        font-size: 66px;
+        line-height: 1.04;
+        font-weight: 700;
+        letter-spacing: -2px;
+        margin-bottom: 22px;
+    }
+    .lede {
+        font-size: 23px;
+        line-height: 1.5;
+        color: rgba(255,255,255,0.82);
+        max-width: 570px;
+    }
+
+    /* Phone bleeding off the right edge */
+    .glow {
+        position: absolute;
+        top: 40px;
+        right: -140px;
+        width: 620px;
+        height: 620px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(74,140,111,0.34) 0%, rgba(74,140,111,0) 68%);
+    }
+    .phone {
+        position: absolute;
+        top: 76px;
+        right: -34px;
+        width: 372px;
+        padding: 9px;
+        background: #000;
+        border-radius: 50px;
+        transform: rotate(-3deg);
+        box-shadow:
+            0 1px 0 rgba(255,255,255,0.08) inset,
+            0 40px 80px -24px rgba(0,0,0,0.65);
+    }
+    .phone img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 42px;
+    }
+</style>
+</head>
+<body>
+    <div class="card">
+        <div class="glow"></div>
+        <div class="phone">
+            <img src="../images/home-light.png" alt="">
+        </div>
+        <div class="copy">
+            <div class="mark">
+                <img src="../images/og-image.png" alt="">
+                <span>SAFEUS</span>
+            </div>
+            <h1>Peace of mind,<br>in one tap.</h1>
+            <p class="lede">Tell the people you love that you're safe — and see in an instant that they are too.</p>
+            <span class="badge"><img src="../images/appstore-badge.svg" alt=""></span>
+        </div>
+    </div>
+</body>
+</html>
