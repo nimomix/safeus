@@ -38,6 +38,16 @@
             -webkit-font-smoothing: antialiased;
         }
         a { color: var(--green-dark); }
+        :focus-visible {
+            outline: 2px solid var(--green-dark);
+            outline-offset: 3px;
+            border-radius: 6px;
+        }
+        /* Dark surfaces need the light mint ring to stay visible */
+        .hero :focus-visible,
+        .darkmode :focus-visible {
+            outline-color: #5fd99a;
+        }
 
         /* Hero */
         .hero {
@@ -250,7 +260,7 @@
         .footer {
             text-align: center;
             padding: 40px 24px 56px;
-            color: #95989c;
+            color: #5f6469;
             font-size: 13px;
             background: var(--bg);
         }
@@ -283,7 +293,7 @@
     <header class="hero">
         <div class="hero-inner">
             <div>
-                <span class="eyebrow">S A F E U S</span>
+                <span class="eyebrow">SAFEUS</span>
                 <span class="launch-pill">Now on the App Store</span>
                 <h1>Peace of mind, in one tap.</h1>
                 <p class="lede">For tense moments, emergencies, and the everyday "are you OK?" — Safeus lets you tell the people you love that you're safe, and see in an instant that they are too.</p>
