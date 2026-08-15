@@ -1,0 +1,8 @@
+{
+  "name": "safeus-web",
+  "private": true,
+  "description": "Static landing page and privacy policy for Safeus.",
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.mjs\""
+  }
+}

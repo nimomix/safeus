@@ -1,0 +1,18 @@
+name: Tests
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+jobs:
+  site-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      # No dependencies — the suite runs on node:test alone, so there is nothing
+      # to install and no lockfile to keep in sync.
+      - run: npm test
